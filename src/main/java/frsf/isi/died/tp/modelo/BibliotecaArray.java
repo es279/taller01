@@ -38,13 +38,19 @@ public class BibliotecaArray implements Biblioteca{
 	public void agregar(MaterialCapacitacion material) {
 		// TODO 06: se agrega un material al arreglo de materiales de capacitacion si hay espacio en el arreglo
 		// caso contrario el metodo no agrega ningun elemento y termina su ejecución
-		
+		MaterialCapacitacion[] aux = new MaterialCapacitacion[this.cantidadMaterial+1];
+		for(int i=0;i<this.cantidadMaterial;i++){
+			aux[i]=this.materialCapacitacion[i];
+		}
+		aux[this.cantidadMaterial]=material;
+		this.materialCapacitacion=aux;
+		this.cantidadMaterial++;
 	}
 
 	@Override
 	public Integer cantidadMateriales() {
 		// TODO 07: retorna la cantidad de materiales que hay ingresados en el sistema
-		return null;
+		return this.materialCapacitacion.length;
 	}
 
 
@@ -53,7 +59,14 @@ public class BibliotecaArray implements Biblioteca{
 	public Integer cantidadLibros() {
 		// TODO 08: retorna la cantidad de libros registrados en el sistema.
 		// No se puede usar para este método el operador "instanceOf" ni realizar ningun tipo de casting. 
-		return null;
+		int cont = 0;
+		for(int i=0;i<this.cantidadMaterial;i++){
+			if(this.materialCapacitacion[i].esLibro()){
+				cont++;
+			}
+		}
+		
+		return cont;
 	}
 
 
@@ -62,7 +75,14 @@ public class BibliotecaArray implements Biblioteca{
 	public Integer cantidadVideos() {
 		// TODO 09: retorna la cantidad de videos registrados en el sistema. 
 		// No se puede usar para este método el operador "instanceOf" ni realizar ningun tipo de casting. 
-		return null;
+		int cont = 0;
+		for(int i=0;i<this.cantidadMaterial;i++){
+			if(this.materialCapacitacion[i].esVideo()){
+				cont++;
+			}
+		}
+		
+		return cont;
 	}
 
 	@Override

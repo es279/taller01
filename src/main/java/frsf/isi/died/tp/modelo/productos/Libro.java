@@ -85,14 +85,14 @@ public class Libro extends MaterialCapacitacion {
 
 	@Override
 	public Boolean esLibro() {
-		//TODO 03: implementar metodo abstracto
-		return null;
+		//TODO 03: implementar metodo abstracto	
+		return true;
 	}
 
 	@Override
 	public Boolean esVideo() {
 		//TODO 04: implementar metodo abstracto
-		return null;
+		return false;
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class Libro extends MaterialCapacitacion {
 	@Override
 	public Double precio() {
 		//TODO 05: implementar metodo abstracto
-		return null;
+		return (this.costo + this.precioCompra *(1.0 + (0.03 * ((double)this.paginas)/150.0)));
 	}
 
 	
