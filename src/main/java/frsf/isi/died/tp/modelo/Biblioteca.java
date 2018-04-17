@@ -53,7 +53,6 @@ public interface Biblioteca {
 	 * @param b
 	 */
 	public void ordenarPorPrecio(Boolean b);
-
 	
 
 	

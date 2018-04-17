@@ -1,5 +1,6 @@
 package frsf.isi.died.tp.util;
 
+
 /**
  * Clase abstracta que almacena un puntero a un arreglo y ofrece operaciones sobre el mismo
  * @author mdominguez

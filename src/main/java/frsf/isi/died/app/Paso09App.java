@@ -48,6 +48,7 @@ public class Paso09App {
 		
 		System.out.println("==================================================================================");
 		System.out.println("DATOS SIN ORDENAR Por precio");
+		
 		biblioteca.imprimir();
 		biblioteca.ordenarPorPrecio(true);
 		System.out.println("==================================================================================");

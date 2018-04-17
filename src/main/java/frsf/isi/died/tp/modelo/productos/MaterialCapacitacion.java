@@ -12,10 +12,10 @@ import frsf.isi.died.tp.util.Ordenable;
 /**
  * Representa de manera abstracta los materiales de capacitaciÃ³n
  * 
- * @author Mendoza Emiliano, Sonzogni Emir, Sonzogni Luciano
- * https://github.com/es279/taller01.git
+ * @author mdominguez
+ * 
  */
-public abstract class MaterialCapacitacion {
+public abstract class MaterialCapacitacion implements Ordenable {
 	protected Integer id;
 	/**
 	 * Titulo del material
@@ -117,5 +117,11 @@ public abstract class MaterialCapacitacion {
 	}
 	
 	// TODO 10: implementar Ordenable
-
+	public final int valor() {
+		return this.precio().intValue();
+	}
+	//RESPUESTA AL INCISO 7.b.ii
+	//El método funciona ya que nunca será ejecutado desde la clase abstracta en cuestión, 
+	//sino por sus clases de especialización. Cabe aclarar que el método precio() deberá ser implementado (redefinido)
+	//en tales clases de especialización
 }

@@ -78,7 +78,7 @@ public class ListaServiceRadix extends ListasService {
 
 	@Override
 	public void ordenar() {
-
+		int aux;
 		for (int i = 0; i < 5; i++) {
 			// calcular la base de la posicion actual
 			// para la unidad es 1, para la decena 10, para la centena 100
@@ -89,6 +89,53 @@ public class ListaServiceRadix extends ListasService {
 				// TODO 11: IMPLEMENTAR el ALGORITMO que chequea el residuo 
 				// e inserta el elemento en la posicion de la matriz de residuos
 				// e incrementa el contador en cantidadPorFila en 1
+				
+				if(mat != null) {
+					aux= (mat.valor()/peso)%10;
+					switch (aux) {
+					case 0:
+						this.residuos[0][cantidadPorFila[0]]=mat;
+						cantidadPorFila[0]++;
+						break;
+					case 1:
+						this.residuos[1][cantidadPorFila[1]]=mat;
+						cantidadPorFila[1]++;
+						break;
+					case 2:
+						this.residuos[2][cantidadPorFila[2]]=mat;
+						cantidadPorFila[2]++;
+						break;
+					case 3:
+						this.residuos[3][cantidadPorFila[3]]=mat;
+						cantidadPorFila[3]++;
+						break;
+					case 4:
+						this.residuos[4][cantidadPorFila[4]]=mat;
+						cantidadPorFila[4]++;
+						break;
+					case 5:
+						this.residuos[5][cantidadPorFila[5]]=mat;
+						cantidadPorFila[5]++;
+						break;
+					case 6:
+						this.residuos[6][cantidadPorFila[6]]=mat;
+						cantidadPorFila[6]++;
+						break;
+					case 7:
+						this.residuos[7][cantidadPorFila[7]]=mat;
+						cantidadPorFila[7]++;
+						break;
+					case 8:
+						this.residuos[8][cantidadPorFila[8]]=mat;
+						cantidadPorFila[8]++;
+						break;
+					case 9:
+						this.residuos[9][cantidadPorFila[9]]=mat;
+						cantidadPorFila[9]++;
+						break;
+					}
+				}
+				
 			}
 			int indiceArregloOrdenado = 0;
 			for (int j = 0; j < 10; j++) {

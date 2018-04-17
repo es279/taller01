@@ -2,9 +2,11 @@
 Taller 01 Java
 
 ##Integrantes del grupo##
-1. <Integrante  del grupo>
-2. <Integrante  del grupo>
-3. <Integrante  del grupo>
+1. <Integrante  Sonzogni, Emir>
+2. <Integrante  Sonzogni, Luciano>
+3. <Integrante  Mendoza, Emiliano>
+
+Repositorio clon: 		https://github.com/es279/taller01.git
 
 ###Tareas a realizar:###
 *	Clonar el repositorio github

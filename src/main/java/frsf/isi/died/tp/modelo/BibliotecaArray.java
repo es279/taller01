@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import frsf.isi.died.tp.modelo.productos.MaterialCapacitacion;
-
+import frsf.isi.died.tp.util.ListaServiceRadix;
+import frsf.isi.died.tp.util.ListasService;
+import frsf.isi.died.tp.util.Ordenable;;
 
 /**
  * Esta clase implementa la interface Biblioteca y todas sus operaciones, gestionando todos los
@@ -26,31 +28,29 @@ public class BibliotecaArray implements Biblioteca{
 	private Integer cantidadMaterial;
 	
 	// TODO 12: crear una variable de tipo ListaService que apuntará a una instancia del servicio de operaciones de lista
-
+	private ListasService puntServicio;
 	
 	public BibliotecaArray() {
 		cantidadMaterial=0;
 		this.materialCapacitacion= new MaterialCapacitacion[10];
-		// TODO 13: inicializar la variable de tipo ListaService para que apunte el servicio de operaciones de listas		
+		// TODO 13: inicializar la variable de tipo ListaService para que apunte el servicio de operaciones de listas
+		this.puntServicio = new ListaServiceRadix(this.materialCapacitacion);
 	}
 
 	@Override
 	public void agregar(MaterialCapacitacion material) {
 		// TODO 06: se agrega un material al arreglo de materiales de capacitacion si hay espacio en el arreglo
 		// caso contrario el metodo no agrega ningun elemento y termina su ejecución
-		MaterialCapacitacion[] aux = new MaterialCapacitacion[this.cantidadMaterial+1];
-		for(int i=0;i<this.cantidadMaterial;i++){
-			aux[i]=this.materialCapacitacion[i];
-		}
-		aux[this.cantidadMaterial]=material;
-		this.materialCapacitacion=aux;
+		if(this.cantidadMaterial>=this.materialCapacitacion.length)
+			return;
+		this.materialCapacitacion[this.cantidadMaterial]=material;
 		this.cantidadMaterial++;
 	}
 
 	@Override
 	public Integer cantidadMateriales() {
 		// TODO 07: retorna la cantidad de materiales que hay ingresados en el sistema
-		return this.materialCapacitacion.length;
+		return this.cantidadMaterial;
 	}
 
 
@@ -88,12 +88,14 @@ public class BibliotecaArray implements Biblioteca{
 	@Override
 	public void imprimir() {		
 		//TODO 14: invocar al método imprimir de la variable de tipo ListaService para que imprima el arreglo 
+		this.puntServicio.imprimir();
 	}
 		
 
 	@Override
 	public void ordenarPorPrecio(Boolean b) {
 		// TODO 15: invocar al metodo ordenar de la variable de tipo ListaService para que ordene el arreglo 
+		this.puntServicio.ordenar();
 	}
 
 
