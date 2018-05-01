@@ -104,6 +104,11 @@ public class BibliotecaArray implements Biblioteca{
 		return Arrays.asList(this.materialCapacitacion);
 	}
 
+	@Override
+	public MaterialCapacitacion buscar(Integer costo) {
+		return null;
+	}
+
 
 
 }

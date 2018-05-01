@@ -113,5 +113,15 @@ public class Libro extends MaterialCapacitacion {
 	}
 
 	
+	@Override
+	public boolean equals(Object aux) {
+		if(aux instanceof Libro) {
+			if(this.titulo.equalsIgnoreCase(((Libro)aux).titulo)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 
 }

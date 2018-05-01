@@ -33,5 +33,15 @@ public class Video extends MaterialCapacitacion {
 	public Boolean esVideo() {
 		return true;
 	}
+	
+	@Override
+	public boolean equals(Object aux) {
+		if(aux instanceof Video) {
+			if(this.titulo.equalsIgnoreCase(((Video)aux).titulo)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

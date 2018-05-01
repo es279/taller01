@@ -15,7 +15,7 @@ import frsf.isi.died.tp.util.Ordenable;
  * @author mdominguez
  * 
  */
-public abstract class MaterialCapacitacion implements Ordenable {
+public abstract class MaterialCapacitacion implements Ordenable, Comparable<MaterialCapacitacion> {
 	protected Integer id;
 	/**
 	 * Titulo del material
@@ -124,4 +124,38 @@ public abstract class MaterialCapacitacion implements Ordenable {
 	//El método funciona ya que nunca será ejecutado desde la clase abstracta en cuestión, 
 	//sino por sus clases de especialización. Cabe aclarar que el método precio() deberá ser implementado (redefinido)
 	//en tales clases de especialización
+	
+	@Override
+	public boolean equals(Object aux) {
+		if(aux instanceof MaterialCapacitacion) {
+			if(this.titulo.equalsIgnoreCase(((MaterialCapacitacion)aux).titulo)) {
+				return true;
+			}
+			
+		}
+		return false;
+	}
+
+	@Override
+	public int compareTo(MaterialCapacitacion i){
+		
+		if(this.equals(i)) {
+			return this.precio().compareTo(i.precio());
+		}
+		else {
+			if(this.titulo.compareTo(i.titulo) < 0) {
+				return -1;
+			}
+			else {
+				return 1;
+			}
+		}
+		
+		
+	}
+	
+	
+
 }
+
+
