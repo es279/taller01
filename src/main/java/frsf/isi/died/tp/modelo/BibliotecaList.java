@@ -66,7 +66,7 @@ public class BibliotecaList implements Biblioteca {
 			this.materiales.sort((m1,m2) -> m1.getTitulo().compareTo(m2.getTitulo()));
 		}
 	}
-
+	
 	@Override
 	public MaterialCapacitacion buscar(Integer precio) {
 		this.ordenarPorPrecio(true);
@@ -75,7 +75,7 @@ public class BibliotecaList implements Biblioteca {
 	
 	private MaterialCapacitacion buscadorBinario(Integer i,Integer f, Integer c){
 			if(f<i) {
-			throw new NoEncontrado (c);
+			throw new RuntimeException ("Material de precio " + c + " no encontrado");
 		}
 		else {
 			if( this.materiales.get((int)((i+f)/2)).getCosto().intValue() == c) {
