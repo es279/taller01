@@ -1,5 +1,7 @@
 package frsf.isi.died.tp.modelo.productos;
 
+import java.util.Date;
+
 public class Video extends MaterialCapacitacion {
 
 	public static final Double COSTOSEGUNDO = 0.15;
@@ -18,6 +20,14 @@ public class Video extends MaterialCapacitacion {
 		this.titulo = titulo;
 		this.costo = costo;
 		this.duracion=duracion;
+	}
+	
+	public Video(Integer idendt, String titul, Double cost, Integer durac, Integer calific, Date fechaPublicacion, String relev, String tem) {
+		this(idendt, titul, cost, durac);
+		this.calificacion = calific;
+		this.fecha_publicacion = fechaPublicacion;
+		this.relevancia = Relevancia.setRelevancia(relev);
+		this.tema = Tema.setTema(tem);
 	}
 	
 	public Double precio() {
@@ -42,6 +52,14 @@ public class Video extends MaterialCapacitacion {
 			}
 		}
 		return false;
+	}
+	
+	public Integer getDuracion() {
+		return this.duracion;
+	}
+	
+	public void setDuracion(int x) {
+		this.duracion = x;
 	}
 
 }

@@ -1,0 +1,7 @@
+id;titulo;costo;precio_compra;numero_paginas;calificacion;fecha_publicacion;relevancia;tema
+1;Libro E;3.0;20.0;200;0;2018-01-20;MEDIA;ALGEBRA
+2;Libro A;3.0;20.0;200;0;2018-06-20;ALTA;DIED
+3;Libro A;3.4;15.0;200;0;2018-06-18;ALTA;ALGEBRA
+4;Libro S;2.1;40.0;200;0;2013-02-20;ALTA;DIED
+5;Libro C;5.0;50.0;200;0;2016-05-23;MEDIA;ALGEBRA
+6;Libro D;3.4;60.0;200;0;2012-11-20;BAJA;DIED

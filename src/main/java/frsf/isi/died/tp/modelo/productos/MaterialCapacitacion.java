@@ -6,7 +6,8 @@
 package frsf.isi.died.tp.modelo.productos;
 
 import java.util.ArrayList;
-
+import java.util.Date;
+import frsf.isi.died.tp.modelo.nodosDeMateriales.*;
 import frsf.isi.died.tp.util.Ordenable;
 
 /**
@@ -28,7 +29,14 @@ public abstract class MaterialCapacitacion implements Ordenable, Comparable<Mate
 	 */
 	protected Double costo;
 	
-
+	protected Integer calificacion;
+	
+	protected Date fecha_publicacion;
+	
+	protected Relevancia relevancia;
+	
+	protected Tema tema;
+	
 	/**
 	 * Constructor por defecto
 	 */
@@ -86,7 +94,35 @@ public abstract class MaterialCapacitacion implements Ordenable, Comparable<Mate
 	public void setCosto(Double costo) {
 		this.costo = costo;
 	}
+
+	public Integer getCalificacion() {
+		return calificacion;
+	}
 	
+	public Date getFechaPublicacion() {
+		return fecha_publicacion;
+	}
+	
+	public Relevancia getRelevancia() {
+		return relevancia;
+	}
+	
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setFechaPublicacion(Date fecha_publicacion) {
+		this.fecha_publicacion = fecha_publicacion;
+	}
+
+	public void setRelevancia(Relevancia relevancia) {
+		this.relevancia = relevancia;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+
 	/**
 	 * El precio de un material se define según el tipo del material y toma como
 	 * base el costo del mismo
@@ -179,7 +215,13 @@ public abstract class MaterialCapacitacion implements Ordenable, Comparable<Mate
 		return true;
 	}*/
 	
-	
+	public boolean setCalificacion(int x) {
+		if(x>-1 && x<101) {
+			calificacion=x;
+			return true;
+		}
+		return false;
+	}
 
 }
 

@@ -1,0 +1,28 @@
+
+ID;1
+TITULO;Nombre Material
+METADATO;NombreMetadato
+AUTOR;Juan;Pepe;Lucas
+EDITORIAL;Santilla
+FECHA_PUBLICACION;2018-04-13
+PALABRA_CLAVE;arreglo pila vector
+RESUMEN;Nombre resumen
+PARRAFO;Parrafo 1;Parrafo 2;Parrafo 3
+ID;3
+TITULO;Nombre 1
+ID;51
+TITULO;Casandra
+METADATO;
+AUTOR;pepe;chompiras
+EDITORIAL;palta
+CAPITULO;capitulo one
+SECCION;seccion one
+PARRAFO;pararafo one
+ID;5
+TITULO;Libro C
+METADATO;
+AUTOR;Juan P
+EDITORIAL;ASD
+CAPITULO;C1
+METADATO_DE_CAPITULO;
+PALABRA_CLAVE;web desarrollo

@@ -51,6 +51,14 @@ public class Libro extends MaterialCapacitacion {
 		this.paginas = paginas;
 	}
 
+	public Libro(Integer id, String titulo, Double costo, Double precioCompra, Integer paginas, Integer calific, Date fechaPublicacion, String releva,String tem) {
+		this(id, titulo, costo, precioCompra, paginas);
+		this.calificacion=calific;
+		this.fecha_publicacion=fechaPublicacion;
+		this.relevancia = Relevancia.setRelevancia(releva);
+		this.tema = Tema.setTema(tem);
+	}
+	
 	/**
 	 * retorna el precio al que el libro fue comprado
 	 * @return precio al que el libro fue comprado

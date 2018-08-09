@@ -75,7 +75,6 @@ public class BibliotecaABB implements Biblioteca {
 
 	@Override
 	public MaterialCapacitacion buscar(Integer precio) {
-		// TODO Auto-generated method stub
 		if(!flagOrdenarPorPrecio) this.ordenarPorPrecio(true);
 		return this.materiales.buscar(precio);		
 	}

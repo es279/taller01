@@ -244,6 +244,7 @@ public class Grafo<T> {
         return this.buscarCaminoNSaltos(origen, destino, saltos, new HashSet<Vertice>());
          
     }
+    
     private List<T> buscarCaminoNSaltos(Vertice<T> n1,Vertice<T> n2,Integer saltos,HashSet<Vertice> visitados){
         ArrayList<T> resultado = new ArrayList<>();
        //
@@ -253,7 +254,6 @@ public class Grafo<T> {
         		resultado.add(n2.getValor());
         	}
         	System.out.println(resultado);
-        	System.out.println(1);
         	return resultado;
         }
         else {
@@ -265,16 +265,70 @@ public class Grafo<T> {
             		if(!resultado.isEmpty()) {
             			resultado.add(0, n1.getValor());
                     	System.out.println(resultado);
-                    	System.out.println(2);
             			return resultado;
             		}
             	}
         	
         }
     	System.out.println(resultado);
-    	System.out.println(3);
         return resultado;
     }
 
+    
+    public List<ArrayList<Vertice>> todosLosCaminos(Vertice ini, Vertice fin){
+    	return todosLosCaminos (ini, fin,Integer.MAX_VALUE);
+	}
+   
+	public List<ArrayList<Vertice>> todosLosCaminos(Vertice ini, Vertice fin, int N){
+		ArrayList pila = new ArrayList<ArrayList<Vertice<T>>>(); //Almacena los caminos parciales
+		ArrayList caminosFinales = new ArrayList<ArrayList<Vertice<T>>>(); //Almacena los caminos finales (return)
+   	
+		ArrayList cam1 = new ArrayList<T>();
+		cam1.add(ini);
+   		if(ini.equals(fin)) {
+   			caminosFinales.add(cam1);
+   		}
+   		else {
+   			List<Vertice<T>> listaAdy = new ArrayList<Vertice<T>>();
+   			ArrayList<Vertice<T>> listaCaminoPrimeroEnCola = new ArrayList<Vertice<T>>();
+   			ArrayList<Vertice<T>> aux = new ArrayList<Vertice<T>>();
+   			
+   			pila.add(cam1);
+   		
+   			while(!pila.isEmpty()) {
+   				listaCaminoPrimeroEnCola = (ArrayList<Vertice<T>>)(pila.get(0));
+   				listaAdy = this.getAdyacentes((Vertice<T>)((ArrayList<Vertice<T>>)pila.get(0)).get(((ArrayList<Vertice<T>>)pila.get(0)).size()-1));
+   				for(Vertice<T> vert : listaAdy) {
+   					if(!listaCaminoPrimeroEnCola.contains(vert)) {
+   						aux = ((ArrayList<Vertice<T>>)((ArrayList<T>)listaCaminoPrimeroEnCola).clone());
+   						aux.add(vert);
+   						if(vert.equals(fin) && aux.size()<=N) {
+   							caminosFinales.add(aux);
+   							for(Vertice<T> v : aux) {
+   								System.out.print(((MaterialCapacitacion)v.getValor()).getTitulo());
+   							}
+   							System.out.println("");
+   						}
+   						else {   						
+   							if(aux.size()<N) {
+   								pila.add(aux);
+   							}
+   						}
+   					}
+   				}
+   				pila.remove(0);
+   			}
+   			
+   		}
+   		return caminosFinales;
+	}
+
+	public void setAristas(List<Arista<T>> aristas) {
+		this.aristas = aristas;
+	}
+
+	public void setVertices(List<Vertice<T>> vertices) {
+		this.vertices = vertices;
+	}
 }
 
